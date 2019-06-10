@@ -51,3 +51,22 @@ function stringSplitter(str, limit) {
   }
 }
 console.log(stringSplitter('0/2/2/0/20/2/0', '/'));
+
+function fibonacci(n){
+  if (n < 2 ){
+    return n
+  }
+  return fibonacci(n-1) + fibonacci(n-2)
+}
+
+console.log(fibonacci(4))
+
+function factorial(n){
+  if (n === 0 ){
+    return 1
+  }
+  return n*factorial(n-1)
+}
+
+console.log(factorial(5))
+
