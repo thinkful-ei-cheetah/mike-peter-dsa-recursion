@@ -97,73 +97,53 @@ function toBinary(dec) {
 
 console.log(toBinary(56));
 
-// function mazeOut(maze, pos){
-//   let paths = [];
-//   // console.log(pos)
-//   // console.log(maze)
+function mazeOut(maze, pos){
+  // let paths = [];
+  console.log(pos)
+  console.log(maze)
 
-//     if(maze[pos[0]][pos[1]] === 'e') {
-//       paths.push("test");
-//     return paths
+    if(maze[pos[0]][pos[1]] === 'e') {
+      return ""
+    }
 
-//     }
-//   if(maze[pos[0]][pos[1]+1] === ' '){
-//     if(maze[pos[0]+1][pos[1]] === ' '){
-      
-//     }
-//     if(maze[pos[0]][pos[1]-1] === ' '){
-//       let newpath = 'l';  
-//     return  newpath + mazeOut(maze, [pos[0], pos[1] + 1]) ;
-//     }
-//     if(maze[pos[0]][pos[1]] === ' '){
-      
-//     }
-//     let path = 'r';  
-//     return path + mazeOut(maze, [pos[0], pos[1] + 1]) ;
-//   }
-//   if(maze[pos[0]][pos[1]+1] === 'e'){
-//     let path = 'r';  
-//     return path + mazeOut(maze, [pos[0], pos[1] + 1]) ;
-//   }
+  if(maze[pos[0]][pos[1]+1] === ' '){
+    let path = 'r';  
+    return path + mazeOut(maze, [pos[0], pos[1] + 1]) ;
+  }
+  if(maze[pos[0]][pos[1]+1] === 'e'){
+    let path = 'r';  
+    return path + mazeOut(maze, [pos[0], pos[1] + 1]) ;
+  }
 
+  if(maze[pos[0]+1][pos[1]] === ' ' ) {
+    let path = 'd';
+    return path + mazeOut(maze, [pos[0] + 1, pos[1]]);
+  }
+  if(maze[pos[0]+1][pos[1]] === 'e' ) {
+    let path = 'd';
+    return path + mazeOut(maze, [pos[0] + 1, pos[1]]);
+  }
 
+  if(maze[pos[0]][pos[1]-1] === ' '){
+    let path = 'l';  
+    return path + mazeOut(maze, [pos[0], pos[1] - 1]) ;
+  }
+  if(maze[pos[0]][pos[1]-1] === 'e'){
+    let path = 'l';  
+    return path + mazeOut(maze, [pos[0], pos[1] - 1]) ;
+  }
+  if(maze[pos[0]-1][pos[1]] === ' ' ) {
+    let path = 'd';
+    return path + mazeOut(maze, [pos[0] - 1, pos[1]]);
+  }
+  if(maze[pos[0]-1][pos[1]] === 'e' ) {
+    let path = 'd';
+    return path + mazeOut(maze, [pos[0] - 1, pos[1]]);
+  }
 
-//   if(maze[pos[0]+1][pos[1]] === ' ' ) {
-//     const newPath = mazeOut(maze, [pos[0] + 1,pos[1]])
-//     let path = 'd';
-//     return path + mazeOut(maze, [pos[0] + 1, pos[1]]);
-//   }
-//   if(maze[pos[0]+1][pos[1]] === 'e' ) {
-//     let path = 'd';
-//     return path + mazeOut(maze, [pos[0] + 1, pos[1]]);
-//   }
+}
 
-
-
-//   if(maze[pos[0]][pos[1]-1] === ' '){
-//     let path = 'l';  
-//     return path + mazeOut(maze, [pos[0], pos[1] - 1]) ;
-//   }
-//   if(maze[pos[0]][pos[1]-1] === 'e'){
-//     let path = 'l';  
-//     return path + mazeOut(maze, [pos[0], pos[1] - 1]) ;
-//   }
-
-
-
-//   if(maze[pos[0]-1][pos[1]] === ' ' ) {
-//     let path = 'd';
-//     return path + mazeOut(maze, [pos[0] - 1, pos[1]]);
-//   }
-//   if(maze[pos[0]-1][pos[1]] === 'e' ) {
-//     let path = 'd';
-//     return path + mazeOut(maze, [pos[0] - 1, pos[1]]);
-//   }
-
-//   return paths
-// }
-
-// console.log(mazeOut(maze, [0,0]))
+console.log(mazeOut(maze, [0,0]))
 
 const PrintPath = function(path, startPos, endPos) {
   console.log('Found path to the exit: ');
