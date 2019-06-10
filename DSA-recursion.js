@@ -145,10 +145,6 @@ function mazeOut(maze, pos){
 
 console.log(mazeOut(maze, [0,0]))
 
-const PrintPath = function(path, startPos, endPos) {
-  console.log('Found path to the exit: ');
-  console.log(path);
-};
 
 function mazeRunnerAll(
   maze,
@@ -185,5 +181,9 @@ function mazeRunnerAll(
   // Remove the last direction from the path
   position--;
 }
-
+const PrintPath = function(path, startPos, endPos) {
+  console.log('Found path to the exit: ');
+  console.log(path);
+};
 console.log(mazeRunnerAll(maze));
+
