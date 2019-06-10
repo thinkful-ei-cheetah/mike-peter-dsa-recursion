@@ -70,3 +70,30 @@ function factorial(n){
 
 console.log(factorial(5))
 
+let mySmallMaze = [
+  [' ', ' ', ' '],
+  [' ', '*', ' '],
+  [' ', ' ', 'e']
+];
+
+let maze = [
+  [' ', ' ', ' ', '*', ' ', ' ', ' '],
+  ['*', '*', ' ', '*', ' ', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', '*', '*', '*', '*', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', 'e']
+];
+
+function mazeOut(maze, start){
+  return mazeOut(maze, )
+}
+
+function toBinary(dec) {
+  if (dec === 0){
+    return '';
+  }
+  const binary = Math.floor(dec%2)
+  return  toBinary(Math.floor(dec/2)) + binary;
+}
+
+console.log(toBinary(56))
