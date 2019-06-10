@@ -187,3 +187,80 @@ const PrintPath = function(path, startPos, endPos) {
 };
 console.log(mazeRunnerAll(maze));
 
+function anagrams(word) {
+  const anagramList = [];
+  if (word.length === 1) {
+    anagramList.push(word[0]);
+    return anagramList;
+  }
+  for (let i = 0; i < word.length; i++) {
+    let prefix = word[i];
+    let restChar = word.substring(0, i) + word.substring(i + 1);
+    let permutations = anagrams(restChar);
+    for (let j = 0; j < permutations.length; j++) {
+      anagramList.push(prefix + permutations[j]);
+    }
+  }
+  return anagramList;
+}
+
+console.log(anagrams("east"))
+
+// const facebook = {
+//   Zuckerberg: {
+//     Schroepfer: {
+//       Bosworth: {
+//         Steve: {},
+//         Kyle: {},
+//         Andra: {}
+//       },
+//       Zhao: {
+//         Richie: {},
+//         Sofia: {}
+//       }
+//     },
+//     Schrage: {
+//       VanDyck: {
+//         Sabrina: {},
+//         Michelle: {},
+//         Josh: {}
+//       },
+//       Swain: {
+//         Blanch: {},
+//         Tom: {},
+//         Joe: {}
+//       }
+//     },
+//     Sandberg: {
+//       Goler: {
+//         Eddie: {},
+//         Julie: {},
+//         Annie: {}
+//       },
+//       Hernandez: {
+//         Rowi: {},
+//         Inga: {},
+//         Morgan: {}
+//       },
+//       Moissinac: {
+//         Amy: {},
+//         Chuck: {},
+//         Vinni: {}
+//       },
+//       Kelley: {
+//         Eric: {},
+//         Ana: {},
+//         Wes: {}
+//       }
+//     }
+//   }
+// };
+
+// function orgChart(org, indent = 0) {
+//   for (var key in org) {
+//     console.log(' '.repeat(indent), key);
+//     orgChart(org[key], indent + 4);
+//   }
+// }
+
+// console.log(orgChart(facebook));
